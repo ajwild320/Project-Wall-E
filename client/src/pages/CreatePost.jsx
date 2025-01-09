@@ -15,9 +15,46 @@ const CreatePost = () => {
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const generateImage = () => {
+  const generateImage = async () => {
+    if (form.prompt && form.prompt.trim() !== '') {  // Check if prompt is not empty
+      try {
+        setGeneratingImg(true);
+        console.log('Sending request with prompt:', form.prompt); // Debugging statement
+        const response = await fetch('http://localhost:8080/api/v1/dalle', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            prompt: form.prompt,
+          }),
+        });
+  
+        if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
+        }
+  
+        const data = await response.json();
+        console.log('Response:', response);
+        console.log('Data:', data);
+        if (data.photo) {
+          setForm({ ...form, photo: data.photo });
+        } else {
+          throw new Error('No photo data returned');
+        }
+      } catch (err) {
+        console.error('Error:', err);
+        alert('Failed to fetch data from the server.');
+      } finally {
+        setGeneratingImg(false);
+      }
+    } else {
+      alert('Please provide a proper prompt');
+    }
+  };
+  
 
-  }
+  
 
   const handleSubmit = () => {
 
