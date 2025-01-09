@@ -100,4 +100,4 @@ Special thanks to JSMastery for the amazing tutorial video and the creators of t
 
 - The project walkthrough video is 2 years old (at the time I watched it) so you will need to be ready to improvise. The API calls changed greatly and the way the API sends data back to you when you call it is also very different than in the video as well. I spent almost 8 hours working my way through the API Documentation and intricacies in the current version I am using in this project versus the one Adrian (JSMastery) was using 2 years ago. 
 
-- Be warned, the API is no longer free to experiment with either. I paid $10 for some API tokens so i could develop and experiment in this project.
+- Be warned, the API is no longer free to experiment with either. I paid $10 for some API tokens so I could develop and experiment in this project.
