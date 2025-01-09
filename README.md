@@ -94,3 +94,6 @@ Contributions are welcome! Feel free to open issues or submit pull requests to i
 
 ## 🌟 Acknowledgments
 Special thanks to JSMastery for the amazing tutorial video and the creators of the technologies and resources used in this project!
+
+## Important Notes
+If you choose to follow the tutorial and like to make consistent commits on Github when finishing features/code sections, Be very careful and make sure you create the 'server' directory (folder) and the 'client' directory as well then commit them both from a parent folder bearing your project name. I made the mistake of just following along with the video and only commiting from 'client' at first which completely messed up my github repo because I then ran into multiple issues with adding the 'server' directory. If you run into any trouble do not hesitate to reach out to me and I will walk you through the process to fix it!
