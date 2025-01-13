@@ -55,10 +55,41 @@ const CreatePost = () => {
   
 
   
+// could cause error when run
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleSubmit = () => {
+  if (form.prompt && form.photo) {
+    setLoading(true);
 
+    try {
+      console.log('Submitting form:', form); // Debugging statement
+      const response = await fetch('http://localhost:8080/api/v1/post', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      console.log('Response:', response);
+      console.log('Data:', data);
+      navigate('/');
+    } catch (err) {
+      console.error('Error:', err);
+      alert('Failed to submit the form.');
+    } finally {
+      setLoading(false);
+    }
+  } else {
+    alert('Please provide a prompt and generate an image');
   }
+};
 
   const handleChange = (e) => {
     setForm({...form, [e.target.name]: e.target.value})
