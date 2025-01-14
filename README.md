@@ -66,16 +66,29 @@ Follow along with JSMastery's complete video tutorial to build and deploy this p
    ```bash
    git clone https://github.com/ajwild320/Project-Wall-E
    ```
-2. Install dependencies:
+2. Install dependencies (for both client and server):
+   - This means to ```cd``` into each directory and run the command below within each one!
    ```bash
    npm install
    ```
 3. Configure environment variables:
    - Add your **MongoDB URI**, **Cloudinary credentials**, and **OpenAI API key** in a `.env` file.
+   - I included a ```.env.template``` file to get you started!
+   - Make sure to place a ```.gitignore``` file in the project directory AND another specifically within your server directory and add the necessary things to ignore when committing (i.e. - .env files, node_modules, etc...) This will protect your API Keys and Database Access URL
 
-4. Start the application:
+4. Start the front end:
    ```bash
    npm run dev
+   ```
+
+5. Start the back end:
+   ```bash
+   npm start
+   ```
+
+6. To check out my live hosted website, visit the following link!
+   ```
+   https://projectwall-e.com/
    ```
 
 ---
@@ -100,4 +113,6 @@ Special thanks to JSMastery for the amazing tutorial video and the creators of t
 
 - The project walkthrough video is 2 years old (at the time I watched it) so you will need to be ready to improvise. The API calls changed greatly and the way the API sends data back to you when you call it is also very different than in the video as well. I spent almost 8 hours working my way through the API Documentation and intricacies in the current version I am using in this project versus the one Adrian (JSMastery) was using 2 years ago. 
 
-- Be warned, the API is no longer free to experiment with either. I paid $10 for some API tokens so I could develop and experiment in this project.
+- Be warned, the OpenAI API is no longer free to experiment with. I paid $10 for some API tokens so I could develop and experiment in this project.
+
+- You will want to change the links from my back end deployment site (render) to your development links (localhost) for your own work purposes in the code.
