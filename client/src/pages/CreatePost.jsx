@@ -20,7 +20,7 @@ const CreatePost = () => {
       try {
         setGeneratingImg(true);
         console.log('Sending request with prompt:', form.prompt); // Debugging statement
-        const response = await fetch('http://localhost:8080/api/v1/dalle', {
+        const response = await fetch('https://project-wall-e.onrender.com/api/v1/dalle', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ const handleSubmit = async (e) => {
 
     try {
       console.log('Submitting form:', form); // Debugging statement
-      const response = await fetch('http://localhost:8080/api/v1/post', {
+      const response = await fetch('https://project-wall-e.onrender.com/api/v1/post', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
